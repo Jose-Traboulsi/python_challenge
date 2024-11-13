@@ -61,6 +61,7 @@ with open(file_to_output, "w") as txt_file:
         )
         return summary
     txt_file.write(election_totals())
+    
     # Loop through the candidates to determine vote percentages and identify the winner
     for candidate in candidate_votes:
         
@@ -74,13 +75,13 @@ with open(file_to_output, "w") as txt_file:
             winner_name = candidate
     
         # Print and save each candidate's vote count and percentage
-            print(f"{candidate}: {candidate_tally:,} ({percent_vote:.2f}%)")
+        print(f"{candidate}: {candidate_tally:,} ({percent_vote:.3f}%)")
 
-            def total_tally():
-                tally_summary = (
-                    f"{candidate}: {candidate_tally:,} ({percent_vote:.2f}%)\n"
-                )
-                return tally_summary
+        def total_tally():
+            tally_summary = (
+                f"{candidate}: {candidate_tally:,} ({percent_vote:.3f}%)\n"
+            )
+            return tally_summary
         txt_file.write(total_tally())
 
     # Generate and print the winning candidate summary

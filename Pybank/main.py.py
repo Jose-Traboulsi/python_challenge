@@ -41,7 +41,7 @@ with open(file_to_load) as financial_data:
         # Track the net change         
         net_change_value = current_net - previous_net
         net_change_list.append(net_change_value)    
-        previous_net = int(row[1])
+        previous_net = int(row[1]) #the current_net value becomes the previous_net for the next calculation
 
     # Calculate the greatest increase in profits (month and amount)
     max_value = max(net_change_list)
